@@ -1,24 +1,32 @@
-# README
+# A. ヘルスチェックAPI
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+シンプルなヘルスチェックエンドポイントを実装したRails APIサーバー
 
-Things you may want to cover:
+## 技術スタック
 
-* Ruby version
+- Ruby 4.0
+- Rails 8.1 (APIモード)
+- RSpec
 
-* System dependencies
+## セットアップ
 
-* Configuration
+VSCodeかCusorでこのプロジェクトを開き、「Reopen in Container」を選択するとdevcontainerが起動します。
+依存関係のインストールは`postCreateCommand`で自動実行されます。
 
-* Database creation
+## APIエンドポイント
 
-* Database initialization
+| メソッド | パス      | 説明           |
+| -------- | --------- | -------------- |
+| GET      | `/health` | ヘルスチェック |
 
-* How to run the test suite
+### レスポンス例
 
-* Services (job queues, cache servers, search engines, etc.)
+```json
+{ "status": "ok" }
+```
 
-* Deployment instructions
+## テスト
 
-* ...
+```bash
+bundle exec rspec
+```

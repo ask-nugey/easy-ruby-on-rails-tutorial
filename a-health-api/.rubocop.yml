@@ -1,8 +1,58 @@
-# Omakase Ruby styling for Rails
+inherit_from: .rubocop_todo.yml
+
 inherit_gem: { rubocop-rails-omakase: rubocop.yml }
 
-# Overwrite or add rules to create your own house style
-#
-# # Use `[a, [b, c]]` not `[ a, [ b, c ] ]`
-# Layout/SpaceInsideArrayLiteralBrackets:
-#   Enabled: false
+plugins:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-rspec_rails
+  - rubocop-rubycw
+
+AllCops:
+  SuggestExtensions: true
+  NewCops: enable
+  DisplayCopNames: true
+  Exclude:
+    - "Gemfile"
+    - "bin/**/*"
+    - "db/**/*"
+    - "log/**/*"
+    - "tmp/**/*"
+    - "vendor/**/*"
+    - "config/environments/*"
+    - "config/puma.rb"
+
+# プラグインのCop
+Performance:
+  Enabled: true
+Rails:
+  Enabled: true
+RSpec:
+  Enabled: true
+RSpecRails:
+  Enabled: true
+Rubycw:
+  Enabled: true
+
+## Layout
+# 一行あたりの文字数制限無し
+Layout/LineLength:
+  Enabled: false
+# インデント幅はスペース2つ
+Layout/IndentationWidth:
+  Enabled: true
+  Width: 2
+
+## Style
+# 日本語コメントを許可
+Style/AsciiComments:
+  Enabled: false
+# 文字列のfreeze（Ruby3からは自動でfreezeされるので要らない）
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+## Naming
+# 変数名に数字を許可
+Naming/VariableNumber:
+  Enabled: false

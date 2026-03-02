@@ -1,0 +1,21 @@
+{
+  "[ruby]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "editor.rulers": [
+      120
+    ],
+    "editor.semanticHighlighting.enabled": true,
+    "editor.defaultFormatter": "Shopify.ruby-lsp"
+  },
+  "rubyLsp.bundleGemfile": "Gemfile",
+  "rubyLsp.formatter": "auto",
+  "rubyLsp.featureFlags": {
+    "fullTestDiscovery": false
+  }
+}
